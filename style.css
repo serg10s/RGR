@@ -1,0 +1,78 @@
+ul.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  ul.menu li {
+    float: left;
+  }
+
+  ul.menu li a {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  ul.menu li a:hover {
+    background-color: #ddd;
+}
+
+    /* Стилизация слайдера */
+.slider-container {
+  position: relative;
+  width: 1400px;
+  height: 900px;
+  overflow: hidden;
+}
+
+.slider-images {
+  display: flex;
+  width: 300%;
+}
+
+.slider-image {
+  width: 100%;
+  height: auto;
+}
+
+.slider-prev,
+.slider-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.slider-prev {
+  left: 10px;
+}
+
+.slider-next {
+  right: 10px;
+}
+
+        /* Стили для футера */
+footer {
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        /* Дополнительные стили для ссылок в футере */
+footer a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 10px;
+        }

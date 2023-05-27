@@ -1,0 +1,49 @@
+        /* Стили для ведомости */
+.entry {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+.entry img {
+            width: 600px;
+            height: 500px;
+            margin-right: 10px;
+        }
+        
+.entry .text {
+            font-size: 35px;
+            line-height: 1.5;
+        }
+
+/* Общие стили страницы */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+ul.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  ul.menu li {
+    float: left;
+  }
+
+  ul.menu li a {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  ul.menu li a:hover {
+    background-color: #ddd;
+}
