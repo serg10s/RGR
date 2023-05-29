@@ -1,34 +1,51 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const sliderImages = document.querySelector('.slider-images');
-  const prevButton = document.querySelector('.slider-prev');
-  const nextButton = document.querySelector('.slider-next');
-  const sliderImageWidth = 1400; // Изменено на ширину картинки в пикселях
-  const sliderImageHeight = 900; // Изменено на высоту картинки в пикселях
+document.addEventListener("DOMContentLoaded", function () {
+    const sliderContainer = document.querySelector('.slider-container');
+    const slides = Array.from(sliderContainer.querySelectorAll('img'));
+    const prevArrow = document.querySelector('.slider-arrow.prev');
+    const nextArrow = document.querySelector('.slider-arrow.next');
+    let currentSlide = 0;
 
-  let currentIndex = 0;
-
-  prevButton.addEventListener('click', () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateSliderPosition();
+    function showSlide(n) {
+        const slideWidth = slides[0].clientWidth;
+        const transformValue = -slideWidth * n;
+        sliderContainer.style.transform = `translateX(${transformValue}px)`;
     }
-  });
 
-  nextButton.addEventListener('click', () => {
-    if (currentIndex < sliderImages.children.length - 1) {
-      currentIndex++;
-      updateSliderPosition();
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
     }
-  });
 
-  function updateSliderPosition() {
-    const translateValue = -(currentIndex * sliderImageWidth);
-    sliderImages.style.transform = `translateX(${translateValue}px)`;
-  }
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
 
-  // Обновление размеров слайдера при изменении размера окна
-  window.addEventListener('resize', () => {
-    sliderImageWidth = 1400; // Измените значение ширины картинки, если оно должно изменяться при изменении размера окна
-    updateSliderPosition();
-  });
+    prevArrow.addEventListener('click', prevSlide);
+    nextArrow.addEventListener('click', nextSlide);
+
+    showSlide(currentSlide);
+    setInterval(nextSlide, 5000);
+});
+
+//jQuery код 
+$(document).ready(function() {
+    $("header").hover(
+        function() {
+            $(this).addClass("hovered");
+        },
+        function() {
+            $(this).removeClass("hovered");
+        }
+    );
+});
+
+$(document).ready(function() {
+    $(".open-modal").click(function() {
+        $("#myModal").css("display", "block");
+    });
+
+    $(".close").click(function() {
+        $("#myModal").css("display", "none");
+    });
 });
