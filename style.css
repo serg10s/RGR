@@ -2,15 +2,27 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url(img/fon.png);
+    background-color: #ABCDEF;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     overflow-x: hidden;
 }
 
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+}
+
 header {
-    background-color: #f0f0f0;
+    background-color: #6495ED;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -84,14 +96,17 @@ main {
 }
 
 .map {
-    height: 600px;
-    width: 100%;
-    text-align: center;
+height: 600px;
+width: 100%;
+text-align: center;
 }
 
 .contact {
-    border: 2px solid OldLace;
+border: 2px solid OldLace;
+padding: 10px; 
+margin-top: 20px; 
 }
+
 .modal {
     display: none;
     position: fixed;
@@ -121,39 +136,144 @@ main {
 }
 
 .gallery {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+}
+
+.gallery::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f1c40f, #3498db); 
+  opacity: 0.5;
+  z-index: -1;
 }
 
 .gallery img {
-    width: calc(33.33% - 20px);
-    height: auto;
-    border: 3px solid DarkSlateGrey;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: calc(33.33% - 20px);
+  height: auto;
+  border: 3px solid rgb(226, 226, 226);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(15, 15, 15, 0.926);
+}
+
+.gallery img:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 4px 8px rgba(48, 50, 48, 0.173);
 }
 
 .menu {
-    list-style-type: none;
-    padding: 0;
+list-style-type: none;
+padding: 0;
+text-align: center; 
 }
 
 .menu li {
-    display: inline-block;
-    margin-right: 10px;
+display: inline-block;
+margin-right: 10px;
 }
 
 .menu li a {
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: #fff;
-    text-decoration: none;
-    background-color: rgb(89, 81, 239);
-    border-radius: 50px;
-    overflow: hidden;
-    transition: all 0.3s;
+position: relative;
+display: inline-block;
+padding: 10px 20px;
+color: #030303;
+text-decoration: none;
+background-color: #F0FFFF;
+border-radius: 25px; 
+overflow: hidden;
+transition: all 0.3s;
+text-transform: uppercase;
 }
+
+
+.menu li a:hover {
+background-color: rgb(120, 110, 255); }
+
+@media screen and (max-width: 768px) {
+  .menu li {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .menu li a {
+    display: block;
+    text-align: center;
+    border-radius: 25px;
+  }
+}
+
+.entries {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-wrap: nowrap; /* Изменено значение на nowrap */
+  overflow-x: auto; /* Добавлено свойство для горизонтальной прокрутки */
+}
+
+.entry {
+  width: 300px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+.entry img {
+  width: 100%;
+  height: 400px; /* Замените на желаемую высоту изображений */
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.entry .text {
+  text-align: center;
+   font-size: 16px; /* Замените на желаемый размер текста */
+}
+
+.entry p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.entry a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.entry a:hover {
+  text-decoration: underline;
+}
+
+footer {
+    background-color: #779ECB;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  footer a {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
